@@ -8,7 +8,7 @@ import time
 
 # params = {'status': 'active'} params=params
 account_name = "storytellersonline"
-secret_key = "HWVx4LHIRMXTAEPcWV0FzOQrWA8Ya5T7xJrv6F5WrjDFqVsNVRmfxU7sa5dvIeLBQ3Ll6WwiHKjobP7EhP3rMUJpxXfmK5ICwvHLkk0VWtGdvndpDR35lY2rnkaPJWH4"
+secret_key = "12345678"
 
 url = f'https://{account_name}.getcourse.ru/pl/api/account/users?key={secret_key}&created_at[from]=2022-01-01'
 try:
@@ -51,23 +51,4 @@ try:
             print("Не удалось создать экспорт")
 except requests.exceptions.RequestException as e:
     print(e)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
