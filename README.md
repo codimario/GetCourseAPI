@@ -6,8 +6,8 @@
 проверять по введенной почте их в базе данных
 возвращать ответ
 
--Вместо {account_name} вставил значение Account name со страницы get.storytellers.online/saas/account/api
--Вместо {secret_key} вставил сгенерированный ключ с той же страницы get.storytellers.online/saas/account/api
+* Вместо {account_name} вставил значение Account name со страницы https://get.storytellers.online/saas/account/api
+* Вместо {secret_key} вставил сгенерированный ключ с той же страницы https://get.storytellers.online/saas/account/api
 
 
 ### Первый запрос выполняется корректно и возвращает export_id ✅
