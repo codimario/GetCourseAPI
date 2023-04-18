@@ -1,6 +1,6 @@
 # GetCourseAPI
 
-Пытаюсь провести экспорт пользователей как указано в документации https://getcourse.ru/help/api#users, код проекта написан на python.
+Пытаюсь провести экспорт пользователей как указано в документации https://getcourse.ru/help/api#users.
 
 * Вместо {account_name} вставил значение Account name со страницы https://get.storytellers.online/saas/account/api
 * Вместо {secret_key} вставил сгенерированный ключ с той же страницы https://get.storytellers.online/saas/account/api
