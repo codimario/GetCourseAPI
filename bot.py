@@ -1,15 +1,16 @@
-# https://{account_name}.getcourse.ru/pl/api/account
-# https://{account_name}.getcourse.ru/pl/api/account/users?key={secret_key}&status=active
-# https://storytellers.online.getcourse.ru/pl/api/account/users?key={secret_key}&tags=курс:Подписка
-# https://storytellers.online.getcourse.ru/pl/api/account/exports/1234?key={secret_key}
+# ЭКСПОРТ ПОЛЬЗОВАТЕЛЕЙ
+# 1. Отправить действие users, секретный ключ и хотя бы один фильтр объектов для экспорта:
+# «https://{account_name}.getcourse.ru/pl/api/account/users?key={secret_key}&....»
+# 2. Отправить действие exports, ключ экспорта и секретный ключ:
+# «https://{account_name}.getcourse.ru/pl/api/account/exports/{export_id}?key={secret_key}»
 
 import requests
 import time
 
-# params = {'status': 'active'} params=params
-account_name = "storytellersonline"
-secret_key = "HWVx4LHIRMXTAEPcWV0FzOQrWA8Ya5T7xJrv6F5WrjDFqVsNVRmfxU7sa5dvIeLBQ3Ll6WwiHKjobP7EhP3rMUJpxXfmK5ICwvHLkk0VWtGdvndpDR35lY2rnkaPJWH4"
+account_name = "testAccount"
+secret_key = "12345"
 
+# Шаг 1: 
 url = f'https://{account_name}.getcourse.ru/pl/api/account/users?key={secret_key}&created_at[from]=2022-01-01'
 try:
     response = requests.get(url, verify=True)
@@ -18,13 +19,14 @@ try:
         print(response_json)
         if "export_id" in response_json["info"]:
             export_id = response_json["info"]["export_id"]
+            
             # Шаг 2: проверяем статус готовности экспорта
             url = f'https://{account_name}.getcourse.ru/pl/api/account/exports/{export_id}/status?key={secret_key}'
             while True:
                 # ВОТ ТУТ ОШИБКА 404 ЗАПРОС НА exports ↓
                 response = requests.get(url, verify=True)
-                # ВОТ ТУТ ОШИБКА 404 ЗАПРОС НА exports ↑
                 print(response.status_code)
+                
                 if response.ok:
                     response_json = response.json()
                     # выводим ответ для дальнейшего анализа
@@ -51,23 +53,3 @@ try:
             print("Не удалось создать экспорт")
 except requests.exceptions.RequestException as e:
     print(e)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
