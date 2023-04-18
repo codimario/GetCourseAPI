@@ -1,9 +1,3 @@
-# ЭКСПОРТ ПОЛЬЗОВАТЕЛЕЙ
-# 1. Отправить действие users, секретный ключ и хотя бы один фильтр объектов для экспорта:
-# «https://{account_name}.getcourse.ru/pl/api/account/users?key={secret_key}&....»
-# 2. Отправить действие exports, ключ экспорта и секретный ключ:
-# «https://{account_name}.getcourse.ru/pl/api/account/exports/{export_id}?key={secret_key}»
-
 import requests
 import time
 
