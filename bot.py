@@ -1,7 +1,7 @@
 import requests
 import time
 
-account_name = "testAccount"
+account_name = "storytellersonline"
 secret_key = "12345"
 
 # Шаг 1: 
